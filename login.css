@@ -102,3 +102,36 @@ button {
 button:hover {
     background-color: darkred;
 }
+
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 20px 0;
+    color: #fff;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 510px;
+}
+.footer-social{
+    margin-right: 500px;
+}
+.footer-social a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.footer-bottom {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+}
