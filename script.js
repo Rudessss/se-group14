@@ -88,4 +88,3 @@ function validateRegistrationForm() {
     }
     return true;
 }
-
