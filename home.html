@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beeflix</title>
+    <title>BEEFLIX</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="home.css">
-    <script>
+    <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function () {
             const currentTime = new Date();
             const hours = currentTime.getHours();
@@ -22,11 +22,21 @@
 
             document.getElementById("greeting").innerText = greeting;
         });
+
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter>4) counter = 1;
+        }, 5000);
+
     </script>
+    
 </head>
+
 <body>
     <header>
-        <div id="logo">Beeflix</div>
+        <div id="logo">BEEFLIX</div>
         <nav>
             <a href="#">Home</a>
             <a href="#">Upcoming</a>
@@ -35,10 +45,96 @@
         <div class="profile-icon"><a href="#"><i class="fa fa-user"></i></a></div>
     </header>
 
-    <section>
-        <!-- Your main content goes here -->
+    <section class="greet">
         <h1 id="greeting"></h1>
-        
+        <div class="flex-container">
+            <h3>Look for movies?</h3>
+            <div class="flex-container">
+                <input type="text" name="" id="" placeholder="type here">
+                <input type="button" value="search">
+            </div>
+        </div>
     </section>
+    
+
+    <section class="slider">
+        <div class="slides-container">
+            <div class="slides">
+                <!-- radio buttons -->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+    
+                <!-- Slides -->
+                <div class="slide first">
+                    <h2>image1</h2>
+                    <img src="pic.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <h2>image2</h2>
+                    <img src="pic.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <h2>image3</h2>
+                    <img src="pic.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <h2>image4</h2>
+                    <img src="pic.jpg" alt="">
+                </div>
+    
+                <!-- Automatic -->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+            </div>
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+        </div>
+    </section>
+
+    <section class="current-show">
+        <h2>Now Showing Movies</h2>
+        <div class="flex-container">
+
+            <div class="movie 1">
+                <img src="pic.jpg" alt="">
+                <p>Movie1</p>
+            </div>
+            <div class="movie 2">
+                <img src="pic.jpg" alt="">
+                <p>Movie2</p>
+            </div>
+            <div class="movie 3">
+                <img src="pic.jpg" alt="">
+                <p>Movie3</p>
+            </div>
+            <div class="movie 4">
+                <img src="pic.jpg" alt="">
+                <p>Movie4</p>
+            </div>
+            <div class="movie 5">
+                <img src="pic.jpg" alt="">
+                <p>Movie5</p>
+            </div>
+            <div class="movie 6">
+                <img src="pic.jpg" alt="">
+                <p>Movie6</p>
+            </div>
+        </div>
+        <div class="left-right">
+            <i class="arrow left"></i>
+            <i class="arrow right"></i>
+        </div>
+    </section>
+
 </body>
 </html>
