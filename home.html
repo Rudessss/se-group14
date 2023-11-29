@@ -6,31 +6,7 @@
     <title>BEEFLIX</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="home.css">
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            const currentTime = new Date();
-            const hours = currentTime.getHours();
-            let greeting;
-
-            if (hours < 12) {
-                greeting = "Good morning!";
-            } else if (hours < 18) {
-                greeting = "Good afternoon!";
-            } else {
-                greeting = "Good evening!";
-            }
-
-            document.getElementById("greeting").innerText = greeting;
-        });
-
-        var counter = 1;
-        setInterval(function(){
-            document.getElementById('radio' + counter).checked = true;
-            counter++;
-            if(counter>4) counter = 1;
-        }, 5000);
-
-    </script>
+    <script src="script.js"></script>
     
 </head>
 
@@ -102,37 +78,37 @@
     </section>
 
     <section class="current-show">
-        <h2>Now Showing Movies</h2>
-        <div class="flex-container">
-
-            <div class="movie 1">
-                <img src="pic.jpg" alt="">
-                <p>Movie1</p>
+        <div class="wraper">
+            <div class="movies">
+                <div class="movie 1">
+                    <img src="pic.jpg" alt="">
+                    <p>Movie1</p>
+                </div>
+                <div class="movie 2">
+                    <img src="pic.jpg" alt="">
+                    <p>Movie2</p>
+                </div>
+                <div class="movie 3">
+                    <img src="pic.jpg" alt="">
+                    <p>Movie3</p>
+                </div>
+                <div class="movie 4">
+                    <img src="pic.jpg" alt="">
+                    <p>Movie4</p>
+                </div>
+                <div class="movie 5">
+                    <img src="pic.jpg" alt="">
+                    <p>Movie5</p>
+                </div>
+                <div class="movie 6">
+                    <img src="pic.jpg" alt="">
+                    <p>Movie6</p>
+                </div>
             </div>
-            <div class="movie 2">
-                <img src="pic.jpg" alt="">
-                <p>Movie2</p>
+            <div class="left-right">
+                <i class="arrow left" id="left"></i>
+                <i class="arrow right" id="right"></i>
             </div>
-            <div class="movie 3">
-                <img src="pic.jpg" alt="">
-                <p>Movie3</p>
-            </div>
-            <div class="movie 4">
-                <img src="pic.jpg" alt="">
-                <p>Movie4</p>
-            </div>
-            <div class="movie 5">
-                <img src="pic.jpg" alt="">
-                <p>Movie5</p>
-            </div>
-            <div class="movie 6">
-                <img src="pic.jpg" alt="">
-                <p>Movie6</p>
-            </div>
-        </div>
-        <div class="left-right">
-            <i class="arrow left"></i>
-            <i class="arrow right"></i>
         </div>
     </section>
 
