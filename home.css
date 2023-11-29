@@ -201,39 +201,50 @@ h2{
     background: red;
 }
 
+/* Current Show */
 
 .current-show{
-    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
-.current-show img{
-    height: 200px;
-    width: 175px;
+.wraper{
+    width: 100%;
+}
+
+.wraper::-webkit-scrollbar{
+    position: relative;
+    height: 5px;
+    background-color: white;
+}
+.wraper::-webkit-scrollbar-thumb{
+    background: red;
+}
+
+.wraper[data-animated="true"]{
+    overflow: scroll;
+    -webkit-mask: linear-gradient(90deg, transparent, red 20%, red 80%, transparent);
+}
+
+.wraper[data-animated=true] .flex-container{
+    width: max-content;
+    flex-wrap: nowrap;
+}
+
+.wraper .flex-container{
+    padding-block: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .movie{
+    height: 200px;
+    width: 180px;
     padding: 20px;
 }
-.left-right{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,0);
-    width: 90vw;
-    display: flex;
-    justify-content: space-between;
-}
 
-.arrow {
-    border: solid red;
-    position: relative;
-    bottom: 150px;
-    border-width: 0 10px 10px 0;
-    display: inline-block;
-    padding: 15px;
-}
-.right {
-    transform: rotate(-45deg);
-}
-.left {
-    transform: rotate(135deg);
+.movie img{
+    height: 150px;
+    width: -webkit-fill-available;
 }
