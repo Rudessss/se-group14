@@ -75,9 +75,13 @@ h1{
 h2{
     margin-top: 50px;
     font-size: 30px;
-    margin-left: 550px;
-    margin-bottom: -10px;
 }
+#now-showing{
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
 .greet{
     display: flex;
     align-items: center;
@@ -113,26 +117,28 @@ h2{
 }
 .slides-container{
     width: 100vw;
-    height: 500px;
+    height: 600px;
     border-radius: 10px;
     overflow: hidden;
 }
 .slides{
     width: 500%;
-    height: 500px;
+    height: 600px;
     display: flex;
 }
 .slides input{
     display: none;
+}
+.slides h2{
+    padding: 20px;
 }
 .slide{
     width: 20%;
     transition: 2s;
 }
 .slide img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
 }
 .navigation-manual{
     position: absolute;
@@ -171,7 +177,7 @@ h2{
 
 /* Auto Navigator */
 .navigation-auto{
-    position: absolute;
+    position: relative;
     display: flex;
     width: 800px;
     justify-content: center;
