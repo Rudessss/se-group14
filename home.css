@@ -259,7 +259,7 @@ footer {
 }
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -267,10 +267,6 @@ footer {
 .footer-logo {
     font-size: 24px;
     font-weight: bold;
-    margin-left: 510px;
-}
-.footer-social{
-    margin-right: 500px;
 }
 .footer-social a {
     text-decoration: none;
