@@ -76,12 +76,8 @@ h2{
     margin-top: 50px;
     font-size: 30px;
 }
-#now-showing{
-    margin-top: 50px;
-    font-size: 30px;
-    text-align: center;
-}
 
+/* Greet */
 .greet{
     display: flex;
     align-items: center;
@@ -130,15 +126,15 @@ h2{
     display: none;
 }
 .slides h2{
-    padding: 20px;
+    padding-bottom: 20px;
 }
 .slide{
     width: 20%;
     transition: 2s;
 }
 .slide img{
+    height: 80%;
     width: -webkit-fill-available;
-    height: -webkit-fill-available;
 }
 .navigation-manual{
     position: absolute;
@@ -177,13 +173,13 @@ h2{
 
 /* Auto Navigator */
 .navigation-auto{
-    position: relative;
+    position: absolute;
     display: flex;
     width: 800px;
     justify-content: center;
     left: 50%;
     transform: translate(-50%,0);
-    margin-top: 460px;
+    bottom: 47px;
 }
 .navigation-auto div{
     border: 2px solid red;
@@ -208,6 +204,12 @@ h2{
 }
 
 /* Current Show */
+#now-showing{
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
 .current-show{
     position: relative;
     display: flex;
