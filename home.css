@@ -286,6 +286,31 @@ h2{
 }
 
 
+/* Seats */
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    border: 8px solid white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+td.selected {
+    background-color: red;
+}
+
+td.preselected {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 /* Footer */
 footer {
     position: relative;
