@@ -46,7 +46,7 @@ nav a {
     color: #ffffff;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     transition: color 0.3s;
 }
@@ -331,15 +331,13 @@ td.preselected {
 
 /* Footer */
 footer {
-    position: relative;
-    bottom: 0;
     background-color: #333;
     padding: 20px 0;
     color: #fff;
 }
 .footer-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -347,6 +345,10 @@ footer {
 .footer-logo {
     font-size: 24px;
     font-weight: bold;
+    margin-left: 510px;
+}
+.footer-social{
+    margin-right: 500px;
 }
 .footer-social a {
     text-decoration: none;
