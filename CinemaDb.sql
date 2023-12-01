@@ -1,5 +1,8 @@
+/* Use Database */
 USE CinemaDb
 
+
+/* Create Table */
 CREATE TABLE UserInfo(
 	UserId UniqueIdentifier NOT NULL PRIMARY KEY,
 	FullName VARCHAR(255) NOT NULL,
@@ -8,7 +11,7 @@ CREATE TABLE UserInfo(
 	Password VARCHAR(255) NOT NULL
 )
 
-CREATE TABLE Ticket(
+CREATE TABLE TicketInfo(
 	UserId UniqueIdentifier NOT NULL,
 	TicketName VARCHAR(255) NOT NULL,
 	TicketPrice INT NOT NULL,
@@ -16,25 +19,31 @@ CREATE TABLE Ticket(
 	CONSTRAINT UserId FOREIGN KEY(UserId) REFERENCES UserInfo(UserId)
 )
 
-
 SET IDENTITY_INSERT UserInfo ON 
 
+/* Check Table */
 EXEC sp_help UserInfo
 
-EXEC sp_help Ticket
+EXEC sp_help TicketInfo
 
+
+/* Insert Data */
 INSERT INTO UserInfo(UserId, FullName, PhoneNumber, Email, Password) 
 VALUES
-	(NEWID(), 'Kadmiel', 'kadmiel@gmail.com', '089612344321', 'password1'),
-	(NEWID(), 'Agung', 'agung@gmail.com', '089656788765', 'password2'),
-	(NEWID(), 'Seemore', 'seemore@gmail.com', '089678900987', 'password3')
+	(NEWID(), 'Kadmiel', '089612344321', 'kadmiel@gmail.com', 'password1'),
+	(NEWID(), 'Agung', '089656788765', 'agung@gmail.com', 'password2'),
+	(NEWID(), 'Seemore', '089678900987', 'seemore@gmail.com', 'password3')
 
+
+/* Select Data */
 SELECT* FROM UserInfo
 
-SELECT* FROM Ticket
+SELECT* FROM TicketInfo
 
 
 
 
+/* FOR DELETE THE TABLE */
 DROP TABLE UserInfo
-DROP TABLE Ticket
+DROP TABLE TicketInfo
+/* FOR DELETE THE TABLE */
