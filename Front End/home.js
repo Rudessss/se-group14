@@ -1,3 +1,9 @@
+function goToSeats() {
+    window.location.href = 'seats.html';
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const currentTime = new Date();
     const hours = currentTime.getHours();
@@ -41,7 +47,7 @@ function addAnimation() {
         });
     });
 }
-
+// infite scroll
 document.addEventListener("DOMContentLoaded", function () {
     // Get the wrapper element
     var wrapper = document.querySelector(".wraper");
@@ -67,23 +73,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+// Ticket
 document.addEventListener("DOMContentLoaded", function () {
     createGrid(9, 9);
 });
-
 function createGrid(rows, cols) {
     const grid = document.getElementById("grid");
+    const rowLabels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
+
+    const headerRow = grid.insertRow(0);
+    headerRow.insertCell(0); // Empty cell at the top-left corner
+    for (let i = 0; i < cols; i++) {
+        const headerCell = headerRow.insertCell(i + 1);
+        headerCell.textContent = i + 1;
+    } 
+
 
     for (let i = 0; i < rows; i++) {
-        const row = grid.insertRow(i);
-        const rowLabels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
+        const row = grid.insertRow(i + 1);
+        const headerCell = row.insertCell(0);
+        headerCell.textContent = rowLabels[i];
 
         for (let j = 0; j < cols; j++) {
-            const cell = row.insertCell(j);
+            const cell = row.insertCell(j+1);
             cell.id = `${i + 1}${rowLabels[j]}`
-            
+
             cell.addEventListener("click", function () {
                 toggleCellSelection(this);
+                updateSelectedInfo();
             });
 
             // Add preselected class to specific cells
@@ -111,5 +129,21 @@ function toggleSelectedToPreselected() {
         cell.classList.remove("selected");
         cell.classList.add("preselected");
     });
+
+    updateSelectedInfo();
     alert(`Number of selected cells: ${numberOfSelectedCells}`);
+}
+
+function updateSelectedInfo() {
+    const selectedSeats = document.querySelectorAll(".selected");
+    const totalPriceElement = document.getElementById("totalPrice");
+    const selectedSeatsElement = document.getElementById("selectedSeats");
+
+    const numberOfSelectedSeats = selectedSeats.length;
+    const totalPrice = numberOfSelectedSeats * 50; // Assuming $50 per seat
+
+    const selectedSeatIds = Array.from(selectedSeats).map(cell => cell.id);
+
+    selectedSeatsElement.textContent = `Selected Seats: ${selectedSeatIds.join(", ")}`;
+    totalPriceElement.textContent = `Total Price: $${totalPrice}`;
 }
