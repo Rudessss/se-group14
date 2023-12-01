@@ -14,12 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("greeting").innerText = greeting;
 });
 
-// var counter = 1;
-// setInterval(function(){
-//     document.getElementById('radio' + counter).checked = true;
-//     counter++;
-//     if(counter>4) counter = 1;
-// }, 5000);
+var counter = 1;
+setInterval(function(){
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if(counter>4) counter = 1;
+}, 5000);
 
 // Curently Showing
 const wrapers = document.querySelectorAll(".wraper");
