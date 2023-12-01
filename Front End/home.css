@@ -76,6 +76,11 @@ h1{
 h2{
     font-size: 30px;
 }
+button{
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
 .slide h2{
     margin-top: 50px;
 }
@@ -207,6 +212,9 @@ h2{
 }
 
 /* Current Show */
+.detailed{
+    display: none;
+}
 #now-showing{
     margin-top: 50px;
     font-size: 30px;
@@ -218,6 +226,10 @@ h2{
     display: flex;
     justify-content: center;
     margin-bottom: 80px;
+}
+.current-show a{
+    color: white;
+    text-decoration: none;
 }
 .wraper{
     width: 100%;
@@ -262,12 +274,6 @@ h2{
 }
 .movie-page .right{
     margin-left: 30px;
-}
-
-.movie-page button{
-    padding: 5px;
-    border-radius: 5px;
-    margin: 5px;
 }
 
 .movie-page img{
