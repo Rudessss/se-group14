@@ -270,6 +270,7 @@ button{
 
 .movie-page .left{
     max-width:500px ;
+    min-width: 200px;
     height: 265px;
 }
 .movie-page .right{
@@ -281,7 +282,7 @@ button{
     height: 100%;
 }
 
-.description p{
+.movieSynopsis p{
     text-indent: 50px;
 }
 
@@ -298,6 +299,17 @@ table {
     border-collapse: collapse;
     margin: 20px auto;
 }
+td:first-child {
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+}
+tr:first-child td {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+    
 
 td {
     width: 40px;
