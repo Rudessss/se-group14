@@ -76,9 +76,12 @@ function createGrid(rows, cols) {
 
     for (let i = 0; i < rows; i++) {
         const row = grid.insertRow(i);
+        const rowLabels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
 
         for (let j = 0; j < cols; j++) {
             const cell = row.insertCell(j);
+            cell.id = `${i + 1}${rowLabels[j]}`
+            
             cell.addEventListener("click", function () {
                 toggleCellSelection(this);
             });
