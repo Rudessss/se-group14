@@ -146,7 +146,7 @@ button{
 }
 .navigation-manual{
     position: absolute;
-    width: 800px;
+    width: 100%;
     margin-top: -40px;
     display: flex;
     justify-content: center;
@@ -183,7 +183,7 @@ button{
 .navigation-auto{
     position: absolute;
     display: flex;
-    width: 800px;
+    width: 100%;
     justify-content: center;
     left: 50%;
     transform: translate(-50%,0);
