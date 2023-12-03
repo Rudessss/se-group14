@@ -1,0 +1,129 @@
+/* Body */
+body {
+    font-family: 'Roboto Condensed';
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #ffffff;
+}
+
+/* Navigation Bar (Header) */
+header {
+    top: 0;
+    position: sticky;
+    color: #ffffff;
+    background-color: black;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+#logo {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+    margin-left: 10px;
+    color: #ff0000;
+}
+nav {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 40px;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: red;
+}
+.profile-icon a{
+    color: #ffffff;
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+.profile-icon a:hover {
+    color: red;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 20px 0;
+    color: #fff;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 510px;
+}
+.footer-social{
+    margin-right: 500px;
+}
+.footer-social a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.footer-bottom {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+/* Schedule */
+.flex-container{
+    display: flex;
+}
+
+.detailsImage{
+    max-width: 220px;
+    margin: 20px;
+}
+
+.showtime{
+    margin: 20px;
+}
+
+.date{
+    margin-bottom: 10px;
+    border-bottom: 1px solid darkred;
+}
+
+.timeList{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.timeList button{
+    padding: 6px 12px 6px 12px;
+    margin: 5px;
+    border-radius: 2px;
+    background-color: red;
+    text-decoration: none;
+    border: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.timeList button:hover{
+    background-color: darkred;
+    transition: 0.3s;
+}
