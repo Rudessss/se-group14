@@ -13,7 +13,7 @@ body {
     padding: 0;
     background-color: black;
     color: #ffffff;
-    height: 1000px;
+    height: 750px;
 }
 
 
@@ -66,6 +66,69 @@ nav a:hover {
     color: red;
 }
 
+
+/* Movie Page */
+.movie-page{
+    padding: 10px;
+    padding-left: 50px;
+    margin-top: 50px;
+}
+.flex-container{
+    display: flex;
+}
+.movie-page .left{
+    max-width: 500px;
+    min-width: 200px;
+    height: 265px;
+    margin-left: 20px;
+}
+.movie-page .right{
+    margin-left: 40px;
+}
+.movie-page img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.movieSynopsis p{
+    text-indent: 75px;
+}
+.detail{
+    display: grid;
+    grid-template-columns: 100px auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.detailsImage{
+    max-width: 220px;
+    margin: 20px;
+}
+.description{
+    padding: 40px;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+.movie-page button{
+    font-size: 15px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 150px;
+    height: 40px;
+    margin: 10px 0px 10px 0px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.movie-page button:hover{
+    background-color: darkred;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.description .detail{
+    padding: 10px;
+}
+
 /* Footer */
 footer {
     position: relative;
@@ -96,45 +159,4 @@ footer {
     margin-top: 10px;
     text-align: center;
     font-size: 12px;
-}
-
-
-/* Movie Now Playing */
-.flex-container{
-    display: flex;
-}
-
-.detailsImage{
-    max-width: 220px;
-    margin: 20px;
-}
-
-.movie-page{
-    padding: 10px;
-    padding-left: 42px;
-    min-height: 350px;
-}
-
-.description{
-    padding-left: 68px;
-}
-
-.movie-page button{
-    font-size: 18px;
-    padding: 5px;
-    background-color: red;
-    color: white;
-    border-radius: 3px;
-    border: none;
-    width: 150px;
-    height: 40px;
-    margin: 10px 0px 10px 0px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.movie-page button:hover{
-    background-color: darkred;
-    text-decoration: none;
-    transition: 0.3s;
 }
