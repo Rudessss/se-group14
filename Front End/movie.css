@@ -58,42 +58,16 @@ nav a:hover {
 }
 
 /* Footer */
-
-footer{
-    /* border: 1px solid red; */
-    margin-top: 50px;
-    background-color: #333;
-    padding: 12px;
-}
-
-
-.footer-logo{
-    text-align: center;
-}
-
-.footer-social{
-    text-align: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-
-.footer-social a{
-    color: white;
-    padding: 10px;
-}
-
-.footer-bottom{
-    text-align: center;
-}
-
-/* footer {
+footer {
+    position: relative;
+    bottom: 0;
     background-color: #333;
     padding: 20px 0;
     color: #fff;
 }
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -101,10 +75,7 @@ footer{
 .footer-logo {
     font-size: 24px;
     font-weight: bold;
-    margin-left: 510px;
-}
-.footer-social{
-
+    margin-inline: 10px;
 }
 .footer-social a {
     text-decoration: none;
@@ -116,10 +87,10 @@ footer{
     margin-top: 10px;
     text-align: center;
     font-size: 12px;
-} */
+}
+
 
 /* Movie Now Playing */
-
 .flex-container{
     display: flex;
 }
