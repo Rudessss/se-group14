@@ -347,6 +347,7 @@ footer {
 .footer-logo {
     font-size: 24px;
     font-weight: bold;
+    margin-inline: 10px;
 }
 .footer-social a {
     text-decoration: none;
