@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@100;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
 /* Body */
 body {
@@ -6,7 +13,9 @@ body {
     padding: 0;
     background-color: black;
     color: #ffffff;
+    height: 1000px;
 }
+
 
 /* Navigation Bar (Header) */
 header {
