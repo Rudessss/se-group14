@@ -71,7 +71,7 @@ section {
 }
 h1{
     font-size: 40px;
-    margin-left: 60px;
+    margin-left: 3vw;
 }
 h2{
     font-size: 30px;
@@ -264,40 +264,6 @@ button{
     height: 265px;
     border-radius: 10px;
     width: -webkit-fill-available;
-}
-
-
-/* Seats */
-table {
-    border-collapse: collapse;
-    margin: 20px auto;
-}
-td:first-child {
-    border-left: none;
-    border-top: none;
-    border-bottom: none;
-}
-tr:first-child td {
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
-td {
-    width: 40px;
-    height: 40px;
-    border: 8px solid white;
-    text-align: center;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-td.selected {
-    background-color: red;
-}
-
-td.preselected {
-    background-color: #ccc;
-    cursor: not-allowed;
 }
 
 /* Footer */
