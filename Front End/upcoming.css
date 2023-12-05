@@ -13,7 +13,7 @@ body {
     padding: 0;
     background-color: black;
     color: #ffffff;
-    height: 1000px;
+    height: 100vh;
 }
 
 /* Navigation Bar (Header) */
@@ -80,8 +80,8 @@ nav a:hover {
     margin-top: 50px;
 }
 .item{
-    width: 15vw;
-    height: 40vh;
+    width: 200px;
+    height: 300px;
     background-position: 50% 50%;
     display: inline-block;
     transition: 0.5s;
@@ -93,6 +93,7 @@ nav a:hover {
     box-shadow: 0 30px 50px #505050;
 }
 .item:nth-child(1){
+    left: 0;
     top: 0;
     border-radius : 0;
     width: 100%;
@@ -100,18 +101,21 @@ nav a:hover {
     box-shadow: none;
 }
 .item:nth-child(2){
-    left: 40%;
+    /* left: 40%; */
+    left: 34vw;
 }
 .item:nth-child(3){
-    left: calc(40% + 220px);
+    /* left: calc(40% + 220px); */
+    left: 51vw;
 }
 .item:nth-child(4){
-    left: calc(40% + 440px);
+    /* left: calc(40% + 440px); */
+    left: 68vw;
 }
 .item .content{
     position: absolute;
     top: 50%;
-    left: 5vw;
+    left: 3vw;
     width: 23vw;
     max-height: 85vh;
     text-align: left;
