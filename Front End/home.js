@@ -1,5 +1,5 @@
 function goToSeats() {
-    window.location.href = 'seats.html';
+    window.location.href = 'seats.php';
 }
 
 

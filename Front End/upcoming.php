@@ -1,3 +1,19 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} // Start the session
+
+include('database.php');
+
+// Check if the user is logged in
+if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
+    include 'header_logged_in.php';
+} else {
+    include 'header_logged_out.php';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +26,7 @@
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <div id="logo">BEEFLIX</div>
         <nav>
             <a href="home.php">Home</a>
@@ -19,7 +35,7 @@
             <a href="login.php">Login</a>
         </nav>
         <div class="profile-icon"><a href="#"><i class="fa fa-user"></i></a></div>
-    </header>
+    </header> -->
     
     <div class="container">
         <div id="slide">

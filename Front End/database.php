@@ -2,7 +2,7 @@
         $server = "localhost";
         $user = "root";
         $pass = "";
-        $name = "CinemaDb";
+        $name = "projek_se_it_div";
         $conn = "";
 
         try{

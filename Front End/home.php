@@ -1,3 +1,19 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} // Start the session
+
+include('database.php');
+
+// Check if the user is logged in
+if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
+    include 'header_logged_in.php';
+} else {
+    include 'header_logged_out.php';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +26,16 @@
 </head>
 
 <body>
-    
-
-    <header>
+    <!-- <header>
         <div id="logo">BEEFLIX</div>
         <nav>
-            <a href="home.php">Home</a>
+            <a href="home.html">Home</a>
             <a href="upcoming.html">Upcoming</a>
-            <a href="register.php">Register</a>
-            <a href="login.php">Login</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
         </nav>
         <div class="profile-icon"><a href="#"><i class="fa fa-user"></i></a></div>
-    </header>
+    </header> -->
 
     <section class="greet">
         <h1 id="greeting"></h1>
@@ -82,43 +96,43 @@
     <section class="current-show">
         <div class="wraper" data-animated="">
             <div class="flex-container">
-                <a href="movie.html">
+                <a href="movie.php?movie_id=1">
                     <div class="movie 1">
                         <img src="./Assets/AntMan-Quantumania.jpg" alt="Ant-Man and the Wasp: Quantumania">
                         <p>Ant-Man and the Wasp: Quantumania</p>
                     </div>
                 </a>
-                <a href="movie.html">
+                <a href="movie.php?movie_id=2">
                     <div class="movie 2">
                         <img src="./Assets/CaptainMarvel.jpg" alt="Captain Marvel">
                         <p>Captain Marvel</p>
                     </div>
                 </a>
-                <a href="movie.html">
+                <a href="movie.php?movie_id=3">
                     <div class="movie 3">
                         <img src="./Assets/FastX.jpg" alt="Fast X">
                         <p>Fast X</p>
                     </div>
                 </a>
-                <a href="movie.html">
+                <a href="movie.php?movie_id=6">
                     <div class="movie 4">
                         <img src="./Assets/MissionImpossible.jpg" alt="Mission: Impossible - Dead Reckoning Part One">
                         <p>Mission: Impossible - Dead Reckoning Part One</p>
                     </div>
                 </a>
-                <a href="movie.html">
+                <a href="movie.php?movie_id=4">
                     <div class="movie 5">
                         <img src="./Assets/Oppenheimer.jpg" alt="Oppenheimer">
                         <p>Oppenheimer</p>
                     </div>
                 </a>
-                <a href="movie.html">
+                <a href="movie.php?movie_id=5">
                     <div class="movie 6">
                         <img src="./Assets/Transformers.jpg" alt="Transformers: Rise of the Beasts">
                         <p>Transformers: Rise of the Beasts</p>
                     </div>
                 </a>
-                <a href="movie.html">
+                <a href="movie.php?movie_id=7">
                     <div class="movie 7">
                         <img src="./Assets/JohnWick4.jpg" alt="John Wick: Chapter 4">
                         <p>John Wick: Chapter 4</p>

@@ -13,6 +13,7 @@ body {
     padding: 0;
     background-color: black;
     color: #ffffff;
+    height: 1000px;
 }
 
 /* Navigation Bar (Header) */
@@ -64,56 +65,6 @@ nav a:hover {
     color: red;
 }
 
-/* Schedule */
-.movie-page{
-    padding: 10px;
-    padding-left: 50px;
-    margin-top: 50px;
-}
-
-.flex-container{
-    display: flex;
-}
-
-.detailsImage{
-    max-width: 220px;
-    margin: 0 30px 20px 20px;
-}
-
-.showContainer{
-    padding: 10px;
-    padding-left: 50px;
-}
-.showtime{
-    margin: 20px;
-}
-
-.date{
-    margin-bottom: 10px;
-    border-bottom: 1px solid darkred;
-}
-
-.timeList{
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.timeList button{
-    padding: 6px 12px 6px 12px;
-    margin: 5px;
-    border-radius: 2px;
-    background-color: red;
-    text-decoration: none;
-    border: none;
-    color: white;
-    transition: 0.3s;
-}
-
-.timeList button:hover{
-    background-color: darkred;
-    transition: 0.3s;
-}
-
 /* Footer */
 footer {
     position: relative;
@@ -144,4 +95,44 @@ footer {
     margin-top: 10px;
     text-align: center;
     font-size: 12px;
+}
+
+/* Schedule */
+.flex-container{
+    display: flex;
+}
+
+.detailsImage{
+    max-width: 220px;
+    margin: 20px;
+}
+
+.showtime{
+    margin: 20px;
+}
+
+.date{
+    margin-bottom: 10px;
+    border-bottom: 1px solid darkred;
+}
+
+.timeList{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.timeList button{
+    padding: 6px 12px 6px 12px;
+    margin: 5px;
+    border-radius: 2px;
+    background-color: red;
+    text-decoration: none;
+    border: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.timeList button:hover{
+    background-color: darkred;
+    transition: 0.3s;
 }

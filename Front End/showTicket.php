@@ -1,3 +1,19 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} // Start the session
+
+include('database.php');
+
+// Check if the user is logged in
+if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
+    include 'header_logged_in.php';
+} else {
+    include 'header_logged_out.php';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +23,7 @@
     <link rel="stylesheet" href="showTicket.css">
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div id="logo">BEEFLIX</div>
         <nav>
             <a href="home.html">Home</a>
@@ -17,7 +33,7 @@
             <a href="showTicket.html">Ticket</a>
         </nav>
         <div class="profile-icon"><a href="#"><i class="fa fa-user"></i></a></div>
-    </header>
+    </header> -->
 
     <h1>Owned Ticket</h1>
     <section class="tickets">
