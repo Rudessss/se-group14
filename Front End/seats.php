@@ -13,21 +13,20 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 }
 
 $movieId = $_SESSION['movieid'];
+$userId = $_SESSION['id_logged_in'];
 $checkMovie= "SELECT * FROM movie_list WHERE movieId = '$movieId'";
 $result = mysqli_query($conn, $checkMovie);
-
+$transactionDate = date('Y-m-d');
 $row = mysqli_fetch_assoc($result);
-?>
 
-<?php
-    if(isset($_POST["reserve"])){
-        $selectedSeats = $_POST['selectedSeats'];
-        $totalPrice = $_POST['totalPrice'];
-        $filmname = "Captain Marvel";
+if (isset($_POST['submit'])){
+    $totalPrice = $_POST['totalPriceInput'];
 
-        $sql = "INSERT INTO ticket_info (fullName, phoneNumber, email, pass) VALUES ('$name', '$phone', '$email', '$pass')";
+    $sql = "INSERT INTO ticket_info (userId, movieId, ticketPrice, ticketDate) VALUES ('$userId', '$movieId', '$totalPrice', '$transactionDate')";
+    mysqli_query($conn, $sql);
+    header("Location: showTicket.php");
+}
 
-    }
 ?>
 
 <!DOCTYPE html>
@@ -42,17 +41,6 @@ $row = mysqli_fetch_assoc($result);
 </head>
 
 <body>
-    <!-- <header>
-        <div id="logo">BEEFLIX</div>
-        <nav>
-            <a href="home.php">Home</a>
-            <a href="upcoming.html">Upcoming</a>
-            <a href="register.php">Register</a>
-            <a href="login.php">Login</a>
-        </nav>
-        <div class="profile-icon"><a href="#"><i class="fa fa-user"></i></a></div>
-    </header> -->
-    
     <section class="movie-page">
         <div class="flex-container">
             <div class="left part">
@@ -69,12 +57,16 @@ $row = mysqli_fetch_assoc($result);
     </section>
 
     <section class="description">
-        <table id="grid">
-            <!-- You can use JavaScript to populate the grid -->
-        </table>
-        <p id="selectedSeats" name="selectedSeats">Selected Seats: </p>
-        <p id="totalPrice" name="totalPrice">Total Price: $0</p>
-        <button onclick="toggleSelectedToPreselected()" name="reserve">Toggle Selected to Preselected</button>
+        <form action="cek.php" method="post">
+            <table id="grid">
+                <!-- You can use JavaScript to populate the grid -->
+            </table>
+            <p id="selectedSeats" name="selectedSeats">Selected Seats: </p>
+            <p id="totalPrice" name="totalPrice">Total Price: $0</p>
+            <input type="hidden" id="totalPriceInput" name="totalPriceInput" value="0">
+            <!-- <button type="submit" name="submit" onclick="toggleSelectedToPreselectedAndSubmit()">Toggle Selected to Preselected</button> -->
+            <button type="submit" name="submit" onclick="toggleSelectedToPreselected()" >Toggle Selected to Preselected</button>
+        </form>
     </section>
 
     <footer>
