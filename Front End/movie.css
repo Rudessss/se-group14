@@ -82,6 +82,7 @@ nav a:hover {
 }
 .movie-page img{
     max-width: 220px;
+    border-radius: 10px;
 }
 .movie-page button{
     font-size: 15px;
