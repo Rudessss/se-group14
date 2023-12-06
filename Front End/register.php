@@ -21,10 +21,69 @@
             echo 'alert("' . "Password is not matched" . '");';
             echo 'window.location.href = "register.php";'; 
             echo '</script>';
+        } else if (empty($name)) {
+            echo '<script>';
+            echo 'alert("' . "Name cannot be empty" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
+        }else if (empty($phone)) {
+            echo '<script>';
+            echo 'alert("' . "Phone number cannot be empty" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
+        } else if (strlen($phone) < 10) {
+            echo '<script>';
+            echo 'alert("' . "Phone number must be longer than 10 digits." . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
         }
-        else{
+        else if (empty($email)) {
+            echo '<script>';
+            echo 'alert("' . "Email address cannot be empty" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
+        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo '<script>';
+            echo 'alert("' . "Please enter a valid email address" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
+        }else if (empty($pass)) {
+            echo '<script>';
+            echo 'alert("' . "Password cannot be empty" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
+        } else if (strlen($pass) < 8) {
+            echo '<script>';
+            echo 'alert("' . "Password must be at least 8 characters" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
+        } else if (!preg_match('/[a-z]/', $pass)) {
+            echo '<script>';
+            echo 'alert("' . "Password must contain at least one lowercase letter" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
+        } else if (!preg_match('/[A-Z]/', $pass)) {
+            echo '<script>';
+            echo 'alert("' . "Password must contain at least one uppercase letter" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
+        } else if (!preg_match('/[0-9]/', $pass)) {
+            echo '<script>';
+            echo 'alert("' . "Password must contain at least one number" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
+        } else if ($cpass != $pass) {
+            echo '<script>';
+            echo 'alert("' . "The confirm password confirmation does not match" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
+        }else{
             $sql = "INSERT INTO user_identity (fullName, phoneNumber, email, pass) VALUES ('$name', '$phone', '$email', '$pass')";
             mysqli_query($conn, $sql);
+            echo '<script>';
+            echo 'alert("' . "Register successfully" . '");';
+            echo 'window.location.href = "register.php";'; 
+            echo '</script>';
             header("Location: login.php");
         }
     }
@@ -73,7 +132,7 @@
             <label for="confirmPassword">Confirm Password</label>
             <input type="password" id="confirmPassword" name="confirmPassword">
 
-            <button type="submit" name="submit"  onclick="validateRegistrationForm()">SUBMIT</button>
+            <button type="submit" name="submit"">SUBMIT</button>
         </form>
         <!-- End of Registration Form -->
     </section>
