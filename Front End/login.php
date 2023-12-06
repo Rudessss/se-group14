@@ -12,19 +12,55 @@
     
         $checkUser= "SELECT * FROM user_identity WHERE email = '$email' AND pass= '$password'";
         $res = mysqli_query($conn, $checkUser);
-    
-        if(mysqli_num_rows($res) > 0){
-            $row = mysqli_fetch_array($res);
-            
-            $_SESSION['user_logged_in'] = true;
-            $_SESSION['id_logged_in'] = $row ['id'];
-            header("Location: home.php");
-            exit();
-        }else{
+
+        if (empty($email)) {
             echo '<script>';
-            echo 'alert("' . "Wrong Password or Email" . '");';
+            echo 'alert("' . "Email cannot be empty" . '");';
             echo 'window.location.href = "login.php";'; 
             echo '</script>';
+        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo '<script>';
+            echo 'alert("' . "Please enter a valid email address" . '");';
+            echo 'window.location.href = "login.php";'; 
+            echo '</script>';
+        } else if (empty($password)) {
+            echo '<script>';
+            echo 'alert("' . "Password cannot be empty" . '");';
+            echo 'window.location.href = "login.php";'; 
+            echo '</script>';
+        } else if (strlen($password) < 8) {
+            echo '<script>';
+            echo 'alert("' . "Password must be at least 8 characters" . '");';
+            echo 'window.location.href = "login.php";'; 
+            echo '</script>';
+        } else if (!preg_match('/[a-z]/', $password)) {
+            echo '<script>';
+            echo 'alert("' . "Password must contain at least one lowercase letter" . '");';
+            echo 'window.location.href = "login.php";'; 
+            echo '</script>';
+        } else if (!preg_match('/[A-Z]/', $password)) {
+            echo '<script>';
+            echo 'alert("' . "Password must contain at least one uppercase letter" . '");';
+            echo 'window.location.href = "login.php";'; 
+            echo '</script>';
+        } else if (!preg_match('/[0-9]/', $password)) {
+            echo '<script>';
+            echo 'alert("' . "Password must contain at least one number" . '");';
+            echo 'window.location.href = "login.php";'; 
+            echo '</script>';
+        } else {
+            if(mysqli_num_rows($res) > 0){
+                $row = mysqli_fetch_array($res);
+                $_SESSION['user_logged_in'] = true;
+                $_SESSION['id_logged_in'] = $row ['id'];
+                header("Location: home.php");
+                exit();
+            }else{
+                echo '<script>';
+                echo 'alert("' . "Wrong Password or Email" . '");';
+                echo 'window.location.href = "login.php";'; 
+                echo '</script>';
+            }
         }
     }
 
@@ -64,7 +100,7 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password">
 
-            <button type="submit" name="submit" onclick="validateLoginForm()">LOGIN</button>
+            <button type="submit" name="submit"">LOGIN</button>
         </form>
         <!-- End of Login Form -->
     </section>
