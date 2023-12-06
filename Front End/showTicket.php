@@ -12,6 +12,10 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
     include 'header_logged_out.php';
 }
 
+$userId = $_SESSION['id_logged_in'];
+$sql = "SELECT* FROM ticket_info ti JOIN movie_list ml ON ti.movieId = ml.movieId WHERE userId = '$userId'";
+$result = mysqli_query($conn, $sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -23,45 +27,29 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
     <link rel="stylesheet" href="showTicket.css">
 </head>
 <body>
-    <!-- <header>
-        <div id="logo">BEEFLIX</div>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="upcoming.html">Upcoming</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-            <a href="showTicket.html">Ticket</a>
-        </nav>
-        <div class="profile-icon"><a href="#"><i class="fa fa-user"></i></a></div>
-    </header> -->
 
     <h1>Owned Ticket</h1>
     <section class="tickets">
         <table class="ticket">
-            <tr>
-                <td><img src="Assets/AntMan-Quantumania.jpg" alt=""></td>
-                <td>
-                    <h2>Ant-Man</h2>
-                    <p>[List of seats number]</p>
-                    <p>Date-Time</p>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Assets/AntMan-Quantumania.jpg" alt=""></td>
-                <td>
-                    <h2>Ant-Man</h2>
-                    <p>[List of seats number]</p>
-                    <p>Date-Time</p>
-                </td>
-            </tr>
-            <tr>
-                <td><img src="Assets/AntMan-Quantumania.jpg" alt=""></td>
-                <td>
-                    <h2>Ant-Man</h2>
-                    <p>[List of seats number]</p>
-                    <p>Date-Time</p>
-                </td>
-            </tr>
+            <?php
+                if (mysqli_num_rows($result) > 0){
+                    while ($row = mysqli_fetch_assoc($result)){
+                        ?>
+                        <tr>
+                            <td><img src="Assets/<?php echo $row['movie_image']; ?>" alt=""></td>
+                            <td>
+                                <h2><?php echo $row['movieName']; ?></h2>
+                                <p>Seats: <?php echo ($row['ticketPrice'] / 50); ?> seats</p>
+                                <p>Transaction Date: <?php echo $row['ticketDate']; ?></p>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                } else {
+                    echo "User has not book the ticket";
+                }
+            ?>
+            
         </table>
     </section>
 
