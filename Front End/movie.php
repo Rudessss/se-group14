@@ -1,11 +1,11 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
-} // Start the session
+} 
 
 include('database.php');
 
-// Check if the user is logged in
+
 if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) {
     include 'header_logged_in.php';
 } else {
@@ -32,16 +32,6 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
 </head>
 
 <body>
-    <!-- <header>
-        <div id="logo">BEEFLIX</div>
-        <nav>
-            <a href="home.html">Home</a>
-            <a href="upcoming.html">Upcoming</a>
-            <a href="register.html">Register</a>
-            <a href="login.html">Login</a>
-        </nav>
-        <div class="profile-icon"><a href="#"><i class="fa fa-user"></i></a></div>
-    </header> -->
     
     <section class="movie-page">
         <div class="flex-container">
@@ -60,7 +50,9 @@ if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) 
     <section class="description">
         <div class="synopsis">
             <h3 id="movieTitle">Synopsis</h3>
+            <br>
             <p id="movieSynopsis"><?php echo $row["movieDesc"] ?></p>
+            <br>
         </div>
     </section>
     
