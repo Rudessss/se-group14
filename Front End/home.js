@@ -130,7 +130,7 @@ function toggleSelectedToPreselected() {
         cell.classList.add("preselected");
     });
 
-    updateSelectedInfo();
+    // updateSelectedInfo();
     alert(`Number of selected cells: ${numberOfSelectedCells}`);
 }
 
@@ -139,11 +139,13 @@ function updateSelectedInfo() {
     const totalPriceElement = document.getElementById("totalPrice");
     const selectedSeatsElement = document.getElementById("selectedSeats");
 
-    const numberOfSelectedSeats = selectedSeats.length;
-    const totalPrice = numberOfSelectedSeats * 50; // Assuming $50 per seat
-
+    var numberOfSelectedSeats = selectedSeats.length;
+    var totalPrice = numberOfSelectedSeats * 50;
+    
     const selectedSeatIds = Array.from(selectedSeats).map(cell => cell.id);
 
+    
     selectedSeatsElement.textContent = `Selected Seats: ${selectedSeatIds.join(", ")}`;
     totalPriceElement.textContent = `Total Price: $${totalPrice}`;
+    document.cookie = `input = ${totalPrice}` ;
 }
