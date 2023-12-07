@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEEFLIX</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="seats.css">
+    <script src="home.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="logo">BEEFLIX</div>
+        <nav>
+            <a href="home.php">Home</a>
+            <a href="upcoming.html">Upcoming</a>
+            <a href="register.php">Register</a>
+            <a href="login.php">Login</a>
+        </nav>
+        <div class="profile-icon"><a href="#"><i class="fa fa-user"></i></a></div>
+    </header>
+    
+    <section class="movie-page">
+        <div class="flex-container">
+            <div class="left part">
+                <img src="pic.jpg" alt="">
+            </div>
+            <div class="right part">
+                <h2>title</h2>
+                <p>Action, Adventure</p><br>
+                <h2>Synopsis</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nesciunt consectetur labore illum, rem error numquam dicta exercitationem odio ab quibusdam impedit, fugiat laudantium, mollitia necessitatibus nam iure ducimus incidunt?</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="description">
+        <table id="grid">
+            <!-- You can use JavaScript to populate the grid -->
+        </table>
+        <p id="selectedSeats">Selected Seats: </p>
+        <p id="totalPrice">Total Price: $0</p>
+        <button onclick="toggleSelectedToPreselected()">Toggle Selected to Preselected</button>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">BEEFLIX</div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/?locale=id_ID"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/home?lang=id"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 BEEFLIX. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+</html>
